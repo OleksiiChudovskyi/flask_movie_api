@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "flask_movie"
+version = "6.0.0"
+description = "Flask Movie API with PostgreSQL and Docker"
+authors = ["Oleksii Chudovskyi oleksii.chudovskyi@gmail.com"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask-restful = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
+flask-swagger-ui = "*"
+marshmallow-sqlalchemy = "*"
+pyjwt = "*"
+requests = "*"
+bs4 = "*"
+psycopg2-binary = "2.9.9"
+gunicorn = "*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+coverage = "*"
+flake8 = "*"
+pytest-cov = "^7.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

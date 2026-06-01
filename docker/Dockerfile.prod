@@ -1,0 +1,35 @@
+FROM python:3.11-slim
+
+RUN useradd --create-home userapi
+
+WORKDIR /usr/src/flask_movie
+
+RUN mkdir media
+RUN mkdir static
+
+RUN apt-get update  \
+    && apt-get install -y --no-install-recommends netcat-openbsd \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+ENV POETRY_VIRTUALENVS_CREATE=false \
+    POETRY_NO_INTERACTION=1
+
+RUN pip install --no-cache-dir poetry
+
+COPY ./pyproject.toml ./poetry.lock* ./
+RUN poetry install --only main --no-root --no-directory
+
+COPY . .
+
+RUN sed -i 's/\r$//g' /usr/src/flask_movie/docker/entrypoint.prod.sh
+RUN chmod +x /usr/src/flask_movie/docker/entrypoint.prod.sh
+
+RUN chown -R userapi:userapi /usr/src/flask_movie
+USER userapi
+
+EXPOSE 8001
+
+ENTRYPOINT ["./docker/entrypoint.prod.sh"]

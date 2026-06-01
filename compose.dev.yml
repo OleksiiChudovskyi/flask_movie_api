@@ -1,0 +1,38 @@
+services:
+
+  api_dev:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile.dev
+    container_name: fm_api_dev
+    command: flask run --host=0.0.0.0 --port=8001
+    ports:
+      - "8001:8001"
+    volumes:
+      - sqlite_data:/usr/src/flask_movie/data
+    environment:
+      - FLASK_APP=wsgi.py
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /usr/src/flask_movie
+          ignore:
+            - venv/
+            - .venv/
+            - data/
+        - action: rebuild
+          path: ./poetry.lock
+
+
+  adminer:
+    image: adminer
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+
+volumes:
+  sqlite_data:

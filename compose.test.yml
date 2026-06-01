@@ -1,0 +1,14 @@
+services:
+
+  api_test:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile.test
+    image: flask_movie_test:1.0.0
+    container_name: test_fm_api
+    command: ["sh", "-c", "poetry run coverage run -m pytest -s -v && poetry run coverage report -m"]
+    ports:
+      - "8000:8000"
+    restart: no #no, always, on-failure: 5, unless-stopped
+    environment:
+      - FLASK_ENV=testing
