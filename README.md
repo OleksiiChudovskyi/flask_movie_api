@@ -41,6 +41,7 @@ The project is deployed and running in a production environment on Railway. You 
 * **Security & Tools**: PyJWT, BeautifulSoup4 (bs4), Requests
 * **WSGI & Server**: Gunicorn, NGINX
 * **DevOps**: Docker, Docker Compose
+* **Testing**: Pytest, Coverage, Mock
 
 ## 🏎️ Scraping Module & Concurrency Strategies
 
