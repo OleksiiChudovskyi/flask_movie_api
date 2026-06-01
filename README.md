@@ -8,8 +8,8 @@ The application ensures fast integration, easy scalability, and high data securi
 
 ## 📊 Status of Workflows
 
-[![Tests in Docker](https://github.com/OleksiiChudovskyi/flask_movie/actions/workflows/tests_docker.yml/badge.svg?branch=main)](https://github.com/OleksiiChudovskyi/flask_movie/actions/)
-[![Tests in VM](https://github.com/OleksiiChudovskyi/flask_movie/actions/workflows/tests_vm.yml/badge.svg?branch=main)](https://github.com/OleksiiChudovskyi/flask_movie/actions/)
+[![Tests in Docker](https://github.com/OleksiiChudovskyi/flask_movie_api/actions/workflows/tests_docker.yml/badge.svg?branch=main)](https://github.com/OleksiiChudovskyi/flask_movie_api/actions/)
+[![Tests in VM](https://github.com/OleksiiChudovskyi/flask_movie_api/actions/workflows/tests_vm.yml/badge.svg?branch=main)](https://github.com/OleksiiChudovskyi/flask_movie_api/actions/)
 
 ---
 
