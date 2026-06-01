@@ -56,7 +56,7 @@ The project includes a tool for automatically populating the database with top m
 
 This repository was created to transparently demonstrate project architecture and development skills.
 
-- **Full Source Code:** The [Flask Movie API GitHub repository](https://github.com/OleksiiChudovskyi/flask_movie) contains the complete source code, architecture, and configuration files/folders typically excluded via `.gitignore` and `.dockerignore`.  
+- **Full Source Code:** The [Flask Movie API GitHub repository](https://github.com/OleksiiChudovskyi/flask_movie_api) contains the complete source code, architecture, and configuration files/folders typically excluded via `.gitignore` and `.dockerignore`.  
   This was done intentionally so you can explore the full development cycle.
 - **Data Security:** To prevent leaks of sensitive information (private API keys, authentication tokens, database passwords), the commit history was fully reset.  
   Current configuration files contain only safe demo values.
@@ -67,8 +67,8 @@ Make sure you have **Python 3.11** and **Poetry** installed.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/OleksiiChudovskyi/flask_movie.git
-cd flask_movie
+git clone https://github.com/OleksiiChudovskyi/flask_movie_api.git
+cd flask_movie_api
 ```
 
 2. Install dependencies via Poetry:
